@@ -1,21 +1,14 @@
-# /*
-#  * @lc app=leetcode id=9 lang=cpp
-#  *
-#  * [9] Palindrome Number
-#  */
-
-# // @lc code=start
 class Solution:
-    def isPalindrome(self, x: int) ->bool:
-        if x < 0:
-            return(False)
+    def isPalindrome(self, x: int) -> bool:
+        # Negative numbers and numbers ending with 0 (except 0 itself) are not palindromic
+        if x < 0 or (x % 10 == 0 and x != 0):
+            return False
         
-            rev_num =0
-            digit =0
-            
-            while(x // (10**digit) !=0):
-                rev_num = (rev_num * 10) + (x // (10**digit) % 10)
-                digit += 1
-                return(x == rev_num)
-# // @lc code=end
-
+        rev = 0
+        while x > rev:
+            last_digit = x % 10
+            rev = rev * 10 + last_digit
+            x = x // 10
+        
+        # Check if the number is palindromic
+        return x == rev or x == rev // 10
