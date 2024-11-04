@@ -14,11 +14,3 @@ class Solution:
         # Return the number of unique elements
         return i + 1  # Return the count of unique elements
 
-# Example usage
-sol = Solution()
-nums = [1, 1, 2, 3, 3, 4]
-unique_count = sol.removeDuplicates(nums)  # This returns the count of unique elements
-print(unique_count)  # Output: 4
-
-# The modified array (up to unique_count) is still in nums
-print(nums[:unique_count])  # Output: [1, 2, 3, 4]
