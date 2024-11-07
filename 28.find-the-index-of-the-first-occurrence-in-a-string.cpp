@@ -1,7 +1,7 @@
 class Solution
 {
 public:
-    int strStr(string s1, string s2)
+    int strStr(String s1, String s2)
     {
         int m = s1.length();
         int n = s2.length();
